@@ -4,7 +4,7 @@ import MessageContainer from './messageContainer';
 // import Cable from '../components/cable';
 import AuthWrapper from '../HOCs/AuthWrapper'
 import { ActionCableConsumer } from 'react-actioncable-provider';
-import { API_ROOT, HEADERS } from '../constraints/index'
+import { API_ROOT, HEADERS, API_WS_ROOT } from '../constraints/index'
 import NavBar from './navBar'
 import NoConversation from '../components/NoConversation'
 
@@ -37,7 +37,7 @@ class Home extends Component {
         } else {
 
         this.setState({conversations: json})
-        this.cable = actioncable.createConsumer('ws://localhost:3000/cable')
+        this.cable = actioncable.createConsumer(API_WS_ROOT)
         this.conversationChannels = []
 
         json.forEach(conversation => {

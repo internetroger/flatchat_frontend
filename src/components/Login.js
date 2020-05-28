@@ -1,5 +1,6 @@
 import React, {useState, Fragment} from 'react';
-import {useHistory, Link} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom';
+import {API_ROOT} from '../constraints/index'
 
 const Login = () => {
 
@@ -20,7 +21,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3000/login', {
+        fetch(`${API_ROOT}login`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
