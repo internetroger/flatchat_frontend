@@ -23,7 +23,7 @@ class Home extends Component {
       
     
       componentDidMount = () => {
-        fetch(`${API_ROOT}/conversations`, {
+        fetch(`${API_ROOT}conversations`, {
           headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`
           }
